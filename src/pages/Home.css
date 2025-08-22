@@ -1,0 +1,71 @@
+.home .hero {
+  position: relative;
+  min-height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  /* force white */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  /* force white */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.why {
+  background-color: #f2f8f1;
+  padding: 3rem 0;
+}
+
+.why h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.why-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.why-list li {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.why-list li::before {
+  content: '✔';
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,164 @@
+/* Section & conteneur */
+.services {
+  padding: 3rem 1.25rem
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem
+}
+
+/* Grille horizontale (4 colonnes desktop → 2 tablette → 1 mobile) */
+.services-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(230px, 1fr));
+}
+
+@media (max-width:1100px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(230px, 1fr))
+  }
+}
+
+@media (max-width:640px) {
+  .services-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* Carte service (bouton cliquable) */
+.service-card {
+  appearance: none;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: .75rem .75rem 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(16, 24, 40, .12);
+  transition: transform .22s ease, box-shadow .22s ease, outline-color .22s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(16, 24, 40, .16);
+}
+
+.service-card:focus {
+  outline: 3px solid rgba(74, 140, 89, .35);
+  outline-offset: 2px;
+}
+
+/* Miniature ronde + animation */
+.service-card img {
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0.9rem auto 0.6rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(74, 140, 89, 0.45);
+  /* halo vert doux */
+}
+
+/* Titre + description centrés */
+.service-card h3 {
+  margin: .35rem 0 .2rem;
+  padding: 0 .5rem;
+  font-weight: 900;
+  letter-spacing: .3px;
+  color: #1d2939;
+}
+
+.service-card p {
+  padding: 0 .7rem .6rem;
+  margin: 0;
+  color: #525f7a;
+  font-size: .95rem;
+}
+
+/* Modal (inchangé, pour les détails) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50
+}
+
+.modal-content {
+  background: #fff;
+  color: #1d2939;
+  border-radius: 16px;
+  padding: 1.25rem;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .25)
+}
+
+.detail-list {
+  margin: .5rem 0 1rem;
+  padding-left: 1.1rem
+}
+
+.detail-list li {
+  margin: .25rem 0
+}
+
+.modal-actions {
+  display: flex;
+  gap: .6rem;
+  justify-content: flex-end
+}
+
+/* Boutons */
+.btn {
+  background: #4a8c59;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: .7rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.btn:hover {
+  background: #3d744e
+}
+
+.btn:active {
+  transform: translateY(1px)
+}
+
+.btn-ghost {
+  background: #f2f4f7;
+  color: #1d2939
+}
+
+/* Respect du système si animations réduites */
+@media (prefers-reduced-motion: reduce) {
+
+  .service-card,
+  .service-card img,
+  .btn {
+    transition: none
+  }
+}
